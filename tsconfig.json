@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"module": "es6",
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"target": "es6",
+		"experimentalDecorators": true
+	},
+	"include": [
+		"**/src/**/*.ts",
+		"*.ts",
+		"**.js"
+	]
+}
