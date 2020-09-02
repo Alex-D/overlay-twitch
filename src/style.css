@@ -1,6 +1,11 @@
+:root {
+	--alert-icon-offset: 0;
+	--alert-background-gradient: hsl(45, 90%, 48%) linear-gradient(to bottom right, hsl(338, 90%, 48%), hsl(45, 90%, 48%) 50%);
+}
+
 html,
 body {
-	background: green;
+	background: #555;
 	margin: 0;
 	font-family: 'JetBrains Mono', sans-serif;
 }
@@ -13,30 +18,64 @@ li {
 }
 
 .alerts {
-	margin: 100px 0 0 20px;
+	margin: 100px 20px 0;
 }
 
 .alert {
 	position: relative;
 	display: inline-block;
 	margin-bottom: 15px;
-	font-size: 24px;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.4;
+	background: var(--alert-background-gradient);
+	background-size: 1920px 150px;
 	color: #fff;
-	background: #111;
-	padding: 20px;
+	padding: 2px;
 	border-radius: 4px;
+	box-shadow: #333 0 0 3px, #333 3px 3px 10px;
 	animation: slideIn 300ms;
 	animation-fill-mode: backwards;
 }
 
+.alert::after {
+	content: "×";
+	position: absolute;
+	top: 0;
+	right: 4px;
+	padding: 2px 4px;
+	font-size: 30px;
+	line-height: 1;
+}
+
+.alert--title {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-left: 2px;
+}
+
+.alert--message {
+	background: hsla(0, 0%, 7%, 0.9);
+	padding: 10px 14px;
+	border-radius: 4px;
+}
+
+.alert--name {
+	display: inline-block;
+	transform: translateY(1px);
+	color: hsl(338, 100%, 55%);
+}
+
 .alert .icon {
+	--alert-icon-offset: -3px;
 	color: inherit;
-	width: 40px;
-	height: 40px;
-	margin-right: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 6px 4px;
 	vertical-align: middle;
-	animation: iconIn 300ms ease 150ms;
+	animation: alertIcon 1600ms ease;
 	animation-fill-mode: both;
+	will-change: transform;
 }
 
 .slide-out .alert {
@@ -68,16 +107,22 @@ li {
 	}
 }
 
-@keyframes iconIn {
-	0% {
-		transform: translateY(-100%) scale(1.2);
-		opacity: 0.5;
+@keyframes alertIcon {
+	0%,
+	15% {
+		transform: translateY(var(--alert-icon-offset)) scale(1) rotate(0);
 	}
-	50% {
-		transform: translateY(3%) scale(0.8);
-		opacity: 1;
+	30% {
+		transform: translateY(-20%) scale(1) rotate(20deg);
 	}
+	60% {
+		transform: translateY(-70%) scale(1.2) rotate(-360deg);
+	}
+	75% {
+		transform: translateY(var(--alert-icon-offset)) scale(0.8) rotate(-360deg);
+	}
+	90%,
 	100% {
-		transform: translateY(-2px) scale(1);
+		transform: translateY(var(--alert-icon-offset)) scale(1) rotate(-360deg);
 	}
 }
