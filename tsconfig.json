@@ -5,7 +5,11 @@
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
 		"target": "es6",
-		"experimentalDecorators": true
+		"experimentalDecorators": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/src/*": ["src/*"]
+		}
 	},
 	"include": [
 		"**/src/**/*.ts",
