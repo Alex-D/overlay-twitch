@@ -1,6 +1,8 @@
 :root {
 	--alert-icon-offset: 0;
-	--alert-background-gradient: hsl(45, 90%, 48%) linear-gradient(to bottom right, hsl(338, 90%, 48%), hsl(45, 90%, 48%) 50%);
+	--alert-background-start: hsl(338, 90%, 48%);
+	--alert-background-end: hsl(45, 90%, 48%);
+	--alert-text-color: hsl(338, 100%, 55%);
 }
 
 html,
@@ -21,14 +23,20 @@ li {
 	margin: 100px 20px 0;
 }
 
+.alerts li {
+	display: flex;
+}
+
 .alert {
 	position: relative;
 	display: inline-block;
+	max-width: 50vw;
 	margin-bottom: 15px;
+	margin-left: auto;
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 1.4;
-	background: var(--alert-background-gradient);
+	background: var(--alert-background-end) linear-gradient(to bottom right, var(--alert-background-start), var(--alert-background-end) 50%);
 	background-size: 1920px 150px;
 	color: #fff;
 	padding: 2px;
@@ -54,16 +62,27 @@ li {
 	margin-left: 2px;
 }
 
-.alert--message {
+.alert--body {
 	background: hsla(0, 0%, 7%, 0.9);
 	padding: 10px 14px;
 	border-radius: 4px;
 }
 
 .alert--name {
-	display: inline-block;
+	display: block;
+	font-weight: 700;
 	transform: translateY(1px);
-	color: hsl(338, 100%, 55%);
+	color: var(--alert-text-color);
+}
+
+.alert--message {
+	font-style: italic;
+	font-size: 16px;
+	padding: 8px 16px;
+	margin: 8px -8px -3px;
+	text-align: center;
+	background: var(--alert-background-start) linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+	border-radius: 3px;
 }
 
 .alert .icon {
@@ -75,7 +94,6 @@ li {
 	vertical-align: middle;
 	animation: alertIcon 1600ms ease;
 	animation-fill-mode: both;
-	will-change: transform;
 }
 
 .slide-out .alert {
