@@ -45,6 +45,9 @@ module.exports = {
 		'quotes': [
 			'error',
 			'single',
+			{
+				'allowTemplateLiterals': true,
+			},
 		],
 		'@typescript-eslint/member-delimiter-style': [
 			'error',

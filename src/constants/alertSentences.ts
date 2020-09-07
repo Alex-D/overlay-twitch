@@ -19,70 +19,70 @@ const ALERT_SENTENCES: Record<AlertType, Array<(name: string, message: string) =
 	'bits': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
-			' a offert un bout de sa paye !',
+			` a offert un bout de sa paye !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Merci ',
+			`Merci `,
 			h('strong.alert--name', name),
-			', tu es désormais bien plus beau.',
+			`, tu es désormais bien plus beau.`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Merci ',
+			`Merci `,
 			h('strong.alert--name', name),
-			' pour ta contribution à mes prochains VSTs :)',
+			` pour ta contribution à mes prochains VSTs :)`,
 			formatMessage(message),
 		]),
 	],
 	'donation': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
-			' a offert un bout de sa paye !',
+			` a offert un bout de sa paye !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Merci ',
+			`Merci `,
 			h('strong.alert--name', name),
-			', tu as fait ta bonne action de la semaine !',
+			`, tu as fait ta bonne action de la semaine !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Merci ',
+			`Merci `,
 			h('strong.alert--name', name),
-			' pour ta contribution à mes prochains VSTs :)',
+			` pour ta contribution à mes prochains VSTs :)`,
 			formatMessage(message),
 		]),
 	],
 	'follow': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
-			' suit désormais cette chaîne !',
+			` suit désormais cette chaîne !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Bonsoir à ',
+			`Bonsoir à `,
 			h('strong.alert--name', name),
-			' qui nous a rejoint !',
+			` qui nous a rejoint !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Serait-ce là ',
+			`Serait-ce là `,
 			h('strong.alert--name', name),
-			' qui souscrit l\'abonnement ?',
+			` qui souscrit l'abonnement ?`,
 			formatMessage(message),
 		]),
 	],
 	'host': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
-			' host désormais ce live !',
+			` host désormais ce live !`,
 			formatMessage(message),
 		]),
 	],
 	'prime_sub_gift': [
 		(name: string, message: string): VNode => h('span', [
-			'Un sub a été offert à ',
+			`Un sub a été offert à `,
 			h('strong.alert--name', name),
 			formatMessage(message),
 		]),
@@ -90,26 +90,26 @@ const ALERT_SENTENCES: Record<AlertType, Array<(name: string, message: string) =
 	'raid': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
-			' a lancé un raid !',
+			` a lancé un raid !`,
 			formatMessage(message),
 		]),
 	],
 	'subscription': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
-			' est généreux et se paye un sub !',
+			` est généreux et se paye un sub !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Merci ',
+			`Merci `,
 			h('strong.alert--name', name),
-			' pour le sub !',
+			` pour le sub !`,
 			formatMessage(message),
 		]),
 		(name: string, message: string): VNode => h('span', [
-			'Et c\'est ',
+			`Et c'est `,
 			h('strong.alert--name', name),
-			' qui lâche un sub. Tu es moins riche, mais moi plus ! Merci :)',
+			` qui lâche un sub. Tu es moins riche, mais moi plus ! Merci :)`,
 			formatMessage(message),
 		]),
 	],
