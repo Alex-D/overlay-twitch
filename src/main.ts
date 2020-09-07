@@ -137,7 +137,7 @@ const ALERT_SENTENCES: Record<AlertType, Array<(name: string, message: string) =
 	],
 	'prime_sub_gift': [
 		(name, message) => h('span', [
-			`Un sub a été offer à `,
+			`Un sub a été offert à `,
 			h('strong.alert--name', name),
 			formatMessage(message),
 		]),
