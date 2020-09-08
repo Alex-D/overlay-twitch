@@ -2,9 +2,11 @@ const ALERT_TYPES = [
 	'bits',
 	'donation',
 	'follow',
+	'gift_sub',
+	'cgift_sub',
 	'host',
-	'prime_sub_gift',
 	'raid',
+	'resub',
 	'subscription',
 ] as const
 

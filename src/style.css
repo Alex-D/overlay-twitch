@@ -35,6 +35,7 @@ body {
 	background: #555;
 	margin: 0;
 	font-family: 'JetBrains Mono', sans-serif;
+	overflow: hidden;
 }
 
 ul,

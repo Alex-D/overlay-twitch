@@ -9,6 +9,7 @@ type StreamLabsEvent = {
 		name?: string
 		from?: string
 		to?: string
+		months?: number
 		amount?: string
 		formatted_amount?: string
 		raiders?: string

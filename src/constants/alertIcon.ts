@@ -5,9 +5,11 @@ const ALERT_ICONS: Record<AlertType, IconId> = {
 	'bits': 'bits',
 	'donation': 'euro',
 	'follow': 'heart',
+	'gift_sub': 'star',
+	'cgift_sub': 'star',
 	'host': 'tv',
-	'prime_sub_gift': 'star',
 	'raid': 'parachute',
+	'resub': 'star',
 	'subscription': 'star',
 }
 

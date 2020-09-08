@@ -23,14 +23,20 @@ function addAlert(state: State, e: StreamLabsEvent): void {
 		case 'donation':
 			title = `Donation — ${eventMessage.formatted_amount}`
 			break
+		case 'gift_sub':
+			title = `Cadeau — ${eventMessage.from} offre un sub`
+			break
+		case 'cgift_sub':
+			title = `Cadeaux — ${eventMessage.from} offre des subs`
+			break
 		case 'host':
 			title = `Host — ${eventMessage.viewers} viewers`
 			break
-		case 'prime_sub_gift':
-			`Cadeau de la part de ${eventMessage.from}`
-			break
 		case 'raid':
 			title = `Raid — ${eventMessage.raiders} raiders`
+			break
+		case 'resub':
+			title = `Resub — ${eventMessage.months as number} mois`
 			break
 	}
 

@@ -73,6 +73,19 @@ const ALERT_SENTENCES: Record<AlertType, Array<(name: string, message: string) =
 			formatMessage(message),
 		]),
 	],
+	'gift_sub': [
+		(name: string, message: string): VNode => h('span', [
+			`Un sub a été offert à `,
+			h('strong.alert--name', name),
+			formatMessage(message),
+		]),
+	],
+	'cgift_sub': [
+		(name: string, message: string): VNode => h('span', [
+			`Il pleut des subs !`,
+			formatMessage(message),
+		]),
+	],
 	'host': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
@@ -80,17 +93,29 @@ const ALERT_SENTENCES: Record<AlertType, Array<(name: string, message: string) =
 			formatMessage(message),
 		]),
 	],
-	'prime_sub_gift': [
-		(name: string, message: string): VNode => h('span', [
-			`Un sub a été offert à `,
-			h('strong.alert--name', name),
-			formatMessage(message),
-		]),
-	],
 	'raid': [
 		(name: string, message: string): VNode => h('span', [
 			h('strong.alert--name', name),
 			` a lancé un raid !`,
+			formatMessage(message),
+		]),
+	],
+	'resub': [
+		(name: string, message: string): VNode => h('span', [
+			h('strong.alert--name', name),
+			` encore et toujours au présent ! Merci pour le soutien !`,
+			formatMessage(message),
+		]),
+		(name: string, message: string): VNode => h('span', [
+			`Rien n'arrête plus `,
+			h('strong.alert--name', name),
+			` ! Merci à toi :)`,
+			formatMessage(message),
+		]),
+		(name: string, message: string): VNode => h('span', [
+			`Merci et rendez-vous le mois prochain `,
+			h('strong.alert--name', name),
+			` !`,
 			formatMessage(message),
 		]),
 	],

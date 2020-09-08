@@ -1,5 +1,4 @@
 /* eslint-env node, browser:false */
-/* eslint-disable @typescript-eslint/no-var-requires */
 
 const path = require('path')
 
@@ -9,6 +8,7 @@ const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const config = {
 	mode: process.env.NODE_ENV,
@@ -26,6 +26,9 @@ const config = {
 	},
 	resolve: {
 		extensions: ['.js', '.ts'],
+		plugins: [
+			new TsconfigPathsPlugin(),
+		],
 	},
 	devServer: {
 		overlay: true,
@@ -37,7 +40,6 @@ const config = {
 	plugins: [
 		new ForkTsCheckerPlugin({
 			eslint: {
-				enabled: true,
 				files: './src/**/*.{js,ts}',
 			},
 		}),
