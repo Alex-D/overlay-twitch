@@ -38,6 +38,16 @@ body {
 	overflow: hidden;
 }
 
+body.socket-error::before {
+	content: "[Overlay] Problème de connexion à la socket. Token manquant ?";
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	padding: 20px;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+}
+
 ul,
 li {
 	list-style: none;

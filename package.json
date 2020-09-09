@@ -2,7 +2,7 @@
   "name": "overlay-twitch",
   "private": true,
   "scripts": {
-    "build": "NODE_ENV=production webpack",
+    "build": "rm -rf dist/ && NODE_ENV=production webpack",
     "watch": "NODE_ENV=development webpack-dev-server --hot",
     "lint": "eslint ."
   },

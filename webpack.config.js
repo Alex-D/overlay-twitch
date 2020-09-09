@@ -17,7 +17,7 @@ const config = {
 		ignored: /node_modules/,
 	},
 	entry: {
-		main: ['./src/main.ts', './src/style.css'],
+		main: ['./src/main.ts', './src/assets/style.css'],
 	},
 	output: {
 		filename: '[name].[hash].js',
@@ -95,7 +95,9 @@ if (process.env.NODE_ENV === 'production') {
 	config.optimization = {
 		minimize: true,
 		minimizer: [
-			new TerserPlugin(),
+			new TerserPlugin({
+				extractComments: false,
+			}),
 		],
 	}
 } else {

@@ -23,7 +23,17 @@ const patch = init([
 	classModule,
 ])
 
-const streamlabs = io(`https://sockets.streamlabs.com?token=${STREAMLABS_SOCKET_API_TOKEN}`, {transports: ['websocket']})
+const urlSearchParams = new URLSearchParams(window.location.search)
+const getUrlSearchParam = (key: string): string => {
+	return urlSearchParams.get(key) || ''
+}
+
+const streamlabsSocketApiToken = process.env.NODE_ENV === 'production' ? getUrlSearchParam('streamlabsToken') : STREAMLABS_SOCKET_API_TOKEN
+const streamlabs = io(`https://sockets.streamlabs.com?token=${streamlabsSocketApiToken}`, {transports: ['websocket']})
+
+streamlabs.on('connect_error', () => {
+	document.body.classList.add('socket-error')
+})
 
 streamlabs.on('event', (event: StreamLabsEvent) => {
 	if (!ALERT_TYPES.includes(event.type)) {
