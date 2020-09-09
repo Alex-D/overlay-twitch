@@ -1,0 +1,182 @@
+:root {
+	--alert-icon-offset: 0;
+	--alert-background-start: hsl(338, 90%, 48%);
+	--alert-background-end: hsl(45, 90%, 48%);
+	--alert-text-color: hsl(338, 100%, 55%);
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url(./fonts/jetbrainsmono-regular.woff2) format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url(./fonts/jetbrainsmono-italic.woff2) format('woff2');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url(./fonts/jetbrainsmono-extrabold.woff2) format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+html,
+body {
+	background: #555;
+	margin: 0;
+	font-family: 'JetBrains Mono', sans-serif;
+	overflow: hidden;
+}
+
+body.socket-error::before {
+	content: "[Overlay] Problème de connexion à la socket. Token manquant ?";
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	padding: 20px;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.alerts {
+	margin: 100px 20px 0;
+}
+
+.alerts li {
+	display: flex;
+}
+
+.alert {
+	position: relative;
+	display: inline-block;
+	max-width: 50vw;
+	margin-bottom: 15px;
+	margin-left: auto;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.4;
+	background: var(--alert-background-end) linear-gradient(to bottom right, var(--alert-background-start), var(--alert-background-end) 50%);
+	background-size: 1920px 150px;
+	color: #fff;
+	padding: 2px;
+	border-radius: 4px;
+	box-shadow: #333 0 0 3px, #333 3px 3px 10px;
+	animation: slideIn 300ms;
+	animation-fill-mode: backwards;
+}
+
+.alert::after {
+	content: "×";
+	position: absolute;
+	top: 0;
+	right: 4px;
+	padding: 2px 4px;
+	font-size: 30px;
+	line-height: 1;
+}
+
+.alert--title {
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-left: 2px;
+}
+
+.alert--body {
+	background: hsla(0, 0%, 7%, 0.9);
+	padding: 10px 14px;
+	border-radius: 4px;
+}
+
+.alert--name {
+	display: inline-block;
+	font-weight: 700;
+	color: var(--alert-text-color);
+}
+
+.alert--message {
+	font-style: italic;
+	font-size: 16px;
+	padding: 8px 16px;
+	margin: 8px -8px -3px;
+	text-align: center;
+	background: var(--alert-background-start) linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+	border-radius: 3px;
+}
+
+.alert .icon {
+	--alert-icon-offset: -3px;
+	color: inherit;
+	width: 20px;
+	height: 20px;
+	margin: 6px 4px;
+	vertical-align: middle;
+	animation: alertIcon 1600ms ease;
+	animation-fill-mode: both;
+}
+
+.slide-out .alert {
+	animation: slideOut 300ms;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(50%);
+		opacity: 0;
+	}
+}
+
+@keyframes slideOut {
+	to {
+		transform: translateX(50%);
+		opacity: 0;
+	}
+}
+
+@keyframes alertBorder {
+	0%,
+	100% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes alertIcon {
+	0%,
+	15% {
+		transform: translateY(var(--alert-icon-offset)) scale(1) rotate(0);
+	}
+	30% {
+		transform: translateY(-20%) scale(1) rotate(20deg);
+	}
+	60% {
+		transform: translateY(-70%) scale(1.2) rotate(-360deg);
+	}
+	75% {
+		transform: translateY(var(--alert-icon-offset)) scale(0.8) rotate(-360deg);
+	}
+	90%,
+	100% {
+		transform: translateY(var(--alert-icon-offset)) scale(1) rotate(-360deg);
+	}
+}
+
