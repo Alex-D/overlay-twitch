@@ -3,6 +3,7 @@
 const path = require('path')
 
 const webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin: CleanPlugin } = require('clean-webpack-plugin')
 const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
@@ -49,6 +50,11 @@ const config = {
 		}),
 		new HtmlPlugin({
 			template: './src/index.html',
+		}),
+		new CopyPlugin({
+			patterns: [
+				{ from: 'src/assets/sounds', to: 'sounds' },
+			],
 		}),
 		new CleanPlugin(),
 		new webpack.DefinePlugin({

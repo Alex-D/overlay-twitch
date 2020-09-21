@@ -2,6 +2,7 @@ import {h} from 'snabbdom/src/package/h'
 
 import ALERT_COLORS from '@/src/constants/alertColors'
 import ALERT_ICONS from '@/src/constants/alertIcon'
+import ALERT_SOUNDS from '@/src/constants/alertSound'
 import EVENT_SHOW_DELAY from '@/src/constants/eventShowDelay'
 import getSentence from '@/src/functions/getSentence'
 import icon from '@/src/functions/icon'
@@ -55,6 +56,12 @@ function addAlert(state: State, e: StreamLabsEvent): void {
 		h('div.alert--body', [
 			getSentence(type, name, eventMessage.message),
 		]),
+		h('audio.alert--sound', {
+			attrs: {
+				autoplay: true,
+				src: `./sounds/${ALERT_SOUNDS[type]}.mp3`,
+			},
+		}),
 	])
 
 	const alert: OverlayAlert = {

@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "rm -rf dist/ && NODE_ENV=production webpack",
-    "watch": "NODE_ENV=development webpack-dev-server --hot",
+    "dev": "NODE_ENV=development webpack-dev-server --hot",
     "lint": "eslint ."
   },
   "repository": {
@@ -22,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "3.10.1",
     "@typescript-eslint/parser": "3.10.1",
     "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "^6.1.1",
     "css-loader": "3.6.0",
     "eslint": "7.8.1",
     "eslint-plugin-import": "2.22.0",
