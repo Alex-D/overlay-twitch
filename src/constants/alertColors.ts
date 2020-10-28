@@ -1,4 +1,4 @@
-import AlertType from '@/src/types/alertTypes'
+import AlertType from '~src/types/alertTypes'
 
 const ALERT_COLORS: Record<AlertType, string[]> = {
 	'bits': ['#c766ff', '#640ce9', '#7a0ce9', '#980ce9'],

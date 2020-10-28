@@ -1,16 +1,18 @@
-import {init} from 'snabbdom/src/package/init'
-import {attributesModule} from 'snabbdom/src/package/modules/attributes'
-import {classModule} from 'snabbdom/src/package/modules/class'
-import {VNode} from 'snabbdom/src/package/vnode'
-import * as io from 'socket.io-client'
+import './assets/style.css'
 
-import ALERT_TYPES from '@/src/constants/alertTypes'
-import KEEP_ALERTS from '@/src/constants/keepAlerts'
-import addAlert from '@/src/functions/addAlert'
-import showConfetti from '@/src/functions/showConfetti'
-import view from '@/src/functions/view'
-import State from '@/src/types/state'
-import StreamLabsEvent from '@/src/types/streamLabsEvent'
+import {init} from 'snabbdom/build/package/init'
+import {attributesModule} from 'snabbdom/build/package/modules/attributes'
+import {classModule} from 'snabbdom/build/package/modules/class'
+import {VNode} from 'snabbdom/build/package/vnode'
+import io from 'socket.io-client'
+
+import ALERT_TYPES from '~src/constants/alertTypes'
+import KEEP_ALERTS from '~src/constants/keepAlerts'
+import addAlert from '~src/functions/addAlert'
+import showConfetti from '~src/functions/showConfetti'
+import view from '~src/functions/view'
+import State from '~src/types/state'
+import StreamLabsEvent from '~src/types/streamLabsEvent'
 
 const state: State = {
 	alerts: [],
@@ -28,7 +30,7 @@ const getUrlSearchParam = (key: string): string => {
 	return urlSearchParams.get(key) || ''
 }
 
-const streamlabsSocketApiToken = process.env.NODE_ENV === 'production' ? getUrlSearchParam('streamlabsToken') : STREAMLABS_SOCKET_API_TOKEN
+const streamlabsSocketApiToken = import.meta.env.MODE === 'production' ? getUrlSearchParam('streamlabsToken') : import.meta.env.VITE_STREAMLABS_SOCKET_API_TOKEN
 const streamlabs = io(`https://sockets.streamlabs.com?token=${streamlabsSocketApiToken}`, {transports: ['websocket']})
 
 streamlabs.on('connect_error', () => {

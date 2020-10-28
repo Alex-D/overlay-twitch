@@ -1,14 +1,14 @@
 import {h} from 'snabbdom/src/package/h'
 
-import ALERT_COLORS from '@/src/constants/alertColors'
-import ALERT_ICONS from '@/src/constants/alertIcon'
-import ALERT_SOUNDS from '@/src/constants/alertSound'
-import EVENT_SHOW_DELAY from '@/src/constants/eventShowDelay'
-import getSentence from '@/src/functions/getSentence'
-import icon from '@/src/functions/icon'
-import OverlayAlert from '@/src/types/overlayAlert'
-import State from '@/src/types/state'
-import StreamLabsEvent from '@/src/types/streamLabsEvent'
+import ALERT_COLORS from '~src/constants/alertColors'
+import ALERT_ICONS from '~src/constants/alertIcon'
+import ALERT_SOUNDS from '~src/constants/alertSound'
+import EVENT_SHOW_DELAY from '~src/constants/eventShowDelay'
+import getSentence from '~src/functions/getSentence'
+import icon from '~src/functions/icon'
+import OverlayAlert from '~src/types/overlayAlert'
+import State from '~src/types/state'
+import StreamLabsEvent from '~src/types/streamLabsEvent'
 
 function addAlert(state: State, e: StreamLabsEvent): void {
 	const eventId = e.event_id
@@ -59,7 +59,7 @@ function addAlert(state: State, e: StreamLabsEvent): void {
 		h('audio.alert--sound', {
 			attrs: {
 				autoplay: true,
-				src: `./sounds/${ALERT_SOUNDS[type]}.mp3`,
+				src: `${import.meta.env.BASE_URL}sounds/${ALERT_SOUNDS[type]}.mp3`,
 			},
 		}),
 	])

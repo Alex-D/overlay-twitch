@@ -1,4 +1,4 @@
-import AlertType from '@/src/types/alertTypes'
+import AlertType from '~src/types/alertTypes'
 
 type StreamLabsEvent = {
 	for?: 'twitch_account'

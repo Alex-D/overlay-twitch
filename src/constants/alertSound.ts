@@ -1,5 +1,5 @@
-import AlertType from '@/src/types/alertTypes'
-import SoundId from '@/src/types/soundId'
+import AlertType from '~src/types/alertTypes'
+import SoundId from '~src/types/soundId'
 
 const ALERT_SOUNDS: Record<AlertType, SoundId> = {
 	'bits': 'sub',

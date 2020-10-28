@@ -1,7 +1,7 @@
 import confetti from 'canvas-confetti'
 
-import ALERT_COLORS from '@/src/constants/alertColors'
-import AlertType from '@/src/types/alertTypes'
+import ALERT_COLORS from '~src/constants/alertColors'
+import AlertType from '~src/types/alertTypes'
 
 function showConfetti(type: AlertType): void {
 	confetti({

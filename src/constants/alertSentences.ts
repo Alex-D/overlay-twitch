@@ -1,7 +1,7 @@
 import {h} from 'snabbdom/src/package/h'
 import {VNode} from 'snabbdom/src/package/vnode'
 
-import AlertType from '@/src/types/alertTypes'
+import AlertType from '~src/types/alertTypes'
 
 function formatMessage(message: string): VNode | undefined {
 	if (!message) {

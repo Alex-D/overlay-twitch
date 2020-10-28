@@ -1,19 +1,26 @@
 {
-	"compilerOptions": {
-		"strict": true,
-		"module": "es6",
-		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
-		"target": "es6",
-		"experimentalDecorators": true,
-		"baseUrl": ".",
-		"paths": {
-			"@/src/*": ["src/*"]
-		}
-	},
-	"include": [
-		"**/src/**/*.ts",
-		"*.ts",
-		"**.js"
-	]
+  "compilerOptions": {
+    "strict": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "~src/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "**/src/**/*.ts",
+    "*.ts",
+    "**.js"
+  ]
 }

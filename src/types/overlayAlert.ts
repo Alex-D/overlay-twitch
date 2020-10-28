@@ -1,6 +1,6 @@
 import {VNode} from 'snabbdom/src/package/vnode'
 
-import AlertType from '@/src/types/alertTypes'
+import AlertType from '~src/types/alertTypes'
 
 type OverlayAlert = {
 	type: AlertType

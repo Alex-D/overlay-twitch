@@ -1,4 +1,4 @@
-import ALERT_TYPES from '@/src/constants/alertTypes'
+import ALERT_TYPES from '~src/constants/alertTypes'
 
 type AlertTypeTuple = typeof ALERT_TYPES
 type AlertType = AlertTypeTuple[number]

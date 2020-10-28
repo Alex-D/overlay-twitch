@@ -1,5 +1,5 @@
-import AlertType from '@/src/types/alertTypes'
-import IconId from '@/src/types/iconId'
+import AlertType from '~src/types/alertTypes'
+import IconId from '~src/types/iconId'
 
 const ALERT_ICONS: Record<AlertType, IconId> = {
 	'bits': 'bits',

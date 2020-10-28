@@ -1,8 +1,8 @@
 import {h} from 'snabbdom/src/package/h'
 import {VNode} from 'snabbdom/src/package/vnode'
 
-import KEEP_ALERTS from '@/src/constants/keepAlerts'
-import State from '@/src/types/state'
+import KEEP_ALERTS from '~src/constants/keepAlerts'
+import State from '~src/types/state'
 
 function view(state: State): VNode {
 	return h(
