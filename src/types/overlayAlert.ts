@@ -1,11 +1,11 @@
-import {VNode} from 'snabbdom/src/package/vnode'
-
 import AlertType from '~src/types/alertTypes'
 
 type OverlayAlert = {
+	eventId: string
 	type: AlertType
-	timeout: number
-	messageVNode: VNode
+	name: string
+	title: string
+	message: string
 }
 
 export default OverlayAlert

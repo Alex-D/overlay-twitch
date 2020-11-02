@@ -1,0 +1,37 @@
+:root {
+	--alert-icon-offset: 0;
+	--alert-background-start: hsl(338, 90%, 48%);
+	--alert-background-end: hsl(45, 90%, 48%);
+	--alert-text-color: hsl(338, 100%, 55%);
+	--color-grey-light: hsl(45, 10%, 50%);
+}
+
+@import "fonts";
+
+html,
+body {
+	background: #555;
+	margin: 0;
+	font-family: 'JetBrains Mono', sans-serif;
+	overflow: hidden;
+}
+
+body.socket-error::before {
+	content: "[Overlay] Problème de connexion à la socket. Token manquant ?";
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	padding: 20px;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@import "header";
+@import "alerts";

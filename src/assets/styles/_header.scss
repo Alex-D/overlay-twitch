@@ -1,0 +1,18 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 40px;
+	padding: 0 16px;
+	background: #111;
+	color: var(--alert-background-end);
+	border-bottom: 1px solid var(--color-grey-light);
+}
+
+.header--date {
+	font-weight: 700;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
