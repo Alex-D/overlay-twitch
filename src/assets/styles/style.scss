@@ -16,6 +16,12 @@ body {
 	overflow: hidden;
 }
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 body.socket-error::before {
 	content: "[Overlay] Problème de connexion à la socket. Token manquant ?";
 	display: block;

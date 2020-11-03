@@ -1,10 +1,10 @@
 import {h, VNode} from 'preact'
-import {useStreamlabsAlerts} from 'src/hooks'
 
 import Alert from '~src/components/Alert'
+import {useAlerts} from '~src/hooks/useAlerts'
 
 export default function Alerts(): VNode {
-	const alerts = useStreamlabsAlerts()
+	const alerts = useAlerts()
 
 	return (
 		<div>

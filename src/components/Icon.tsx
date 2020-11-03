@@ -5,7 +5,7 @@ import IconId from '~src/types/iconId'
 export default function Icon(props: {iconId: IconId}): VNode {
 	return (
 		<svg class="icon">
-			<use xlinkHref={`#icon-${props.iconId}`}/>
+			<use xlinkHref={`/icons.svg#icon-${props.iconId}`}/>
 		</svg>
 	)
 }

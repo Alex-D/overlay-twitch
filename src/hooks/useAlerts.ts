@@ -20,7 +20,7 @@ streamlabs.on('connect_error', () => {
 	document.body.classList.add('socket-error')
 })
 
-export function useStreamlabsAlerts(): OverlayAlert[] {
+export function useAlerts(): OverlayAlert[] {
 	const [alerts, setAlerts] = useState<OverlayAlert[]>([])
 
 	useEffect(() => {

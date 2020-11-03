@@ -1,4 +1,6 @@
 import {Fragment, h, VNode} from 'preact'
+import {memo} from 'preact/compat'
+import {useMemo} from 'preact/hooks'
 
 import AlertType from '~src/types/alertTypes'
 
@@ -62,7 +64,7 @@ const ALERT_SENTENCES: Record<AlertType, Array<(name: string) => VNode>> = {
 		),
 	],
 	'cgift_sub': [
-		(name: string): VNode => (
+		(): VNode => (
 			<Fragment>
 				Il pleut des subs !
 			</Fragment>
@@ -123,10 +125,12 @@ type AlertSentenceProps = {
 	name: string
 }
 
-export default function AlertSentence(props: AlertSentenceProps): VNode {
+const AlertSentence = memo(function AlertSentence(props: AlertSentenceProps): VNode {
 	const sentencesForType = ALERT_SENTENCES[props.type]
 
 	const sentence = sentencesForType[Math.floor(Math.random() * sentencesForType.length)]
 
 	return sentence(props.name)
-}
+})
+
+export default AlertSentence
