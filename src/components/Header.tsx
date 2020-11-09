@@ -6,7 +6,7 @@ import HeaderTwitch from '~src/components/HeaderTwitch'
 import {useDate} from '~src/hooks/useDate'
 
 export default function Header(): VNode {
-	const date = useDate()
+	const {date, hour} = useDate()
 
 	return (
 		<header class="header">
@@ -15,6 +15,10 @@ export default function Header(): VNode {
 			<HeaderTwitch/>
 			<div class="header--date">
 				{date}
+
+				<div class="header--hour">
+					{hour}
+				</div>
 			</div>
 		</header>
 	)

@@ -1,7 +1,7 @@
 .header {
-	--header-color: #a8d26d;
-	--header-background-color: hsl(134, 10%, 9%);
-	--header-border-color: #48995b;
+	--header-color: hsl(134, 10%, 9%);
+	--header-border-color: hsl(85, 10%, 10%);
+	--header-background-color: linear-gradient(to bottom right, #a8d26d -10%, #00c9a7 110%);
 	--header-height: 48px;
 
 	display: flex;
@@ -9,9 +9,11 @@
 	align-items: center;
 	height: var(--header-height);
 	padding: 0 16px;
+	margin: 8px;
 	background: var(--header-background-color);
 	color: var(--header-color);
-	border-bottom: 1px solid var(--header-border-color);
+	border-radius: 4px;
+	box-shadow: var(--header-color) 0 0 4px;
 }
 
 .header--socials {
@@ -25,6 +27,7 @@
 		padding-top: 2px;
 		padding-left: calc(var(--icon-size) + 8px);
 		margin-right: 32px;
+		font-weight: 700;
 	}
 
 	&-name {
@@ -33,6 +36,8 @@
 		opacity: 0.7;
 		letter-spacing: 0.5px;
 		padding-top: 4px;
+		font-weight: 700;
+		font-family: 'JetBrains Mono', sans-serif;
 	}
 
 	&-icon {
@@ -61,6 +66,7 @@
 		padding-top: 2px;
 		padding-left: calc(var(--icon-size) + 8px);
 		margin-right: 32px;
+		font-weight: 700;
 	}
 
 	&-name {
@@ -69,11 +75,25 @@
 		opacity: 0.7;
 		letter-spacing: 0.5px;
 		padding-top: 4px;
+		font-weight: 700;
+		font-family: 'JetBrains Mono', sans-serif;
 	}
 }
 
 .header--date {
+	font-weight: 700;
+
 	&::first-letter {
 		text-transform: uppercase;
 	}
+}
+
+.header--hour {
+	display: inline-block;
+	color: #00c9a7;
+	background: var(--header-color);
+	border-radius: 5px;
+	padding: 8px;
+	margin-left: 2px;
+	transform: translateX(10px);
 }

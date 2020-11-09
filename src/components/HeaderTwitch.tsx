@@ -32,8 +32,12 @@ export default function HeaderTwitch(): VNode {
 				{viewers}
 			</div>
 			<div class="header--socials-item">
-				<div class="header--socials-name">Subgoal : émotes</div>
+				<div class="header--socials-name">Subs</div>
 				{subs}/15
+			</div>
+			<div class="header--socials-item">
+				<div class="header--socials-name">Subgoal</div>
+				Ajout des émotes
 			</div>
 		</div>
 	)
