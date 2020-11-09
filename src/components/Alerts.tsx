@@ -1,4 +1,4 @@
-import {h, VNode} from 'preact'
+import {Fragment, h, VNode} from 'preact'
 
 import Alert from '~src/components/Alert'
 import {useAlerts} from '~src/hooks/useAlerts'
@@ -12,7 +12,9 @@ export default function Alerts(): VNode {
 				{
 					alerts.map((alert) => {
 						return (
-							<Alert alert={alert}/>
+							<Fragment>
+								<Alert alert={alert}/>
+							</Fragment>
 						)
 					})
 				}
