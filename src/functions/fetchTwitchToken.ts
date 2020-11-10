@@ -5,7 +5,7 @@ const TWITCH_ACCESS_TOKEN_STORAGE_KEY = 'twitch_access_token'
 const TWITCH_REFRESH_TOKEN_STORAGE_KEY = 'twitch_refresh_token'
 const TWITCH_ACCESS_TOKEN_EXPIRES_STORAGE_KEY = 'twitch_access_token_expires'
 
-const redirectUri = window.location.origin
+const redirectUri = window.location.origin + window.location.pathname
 
 const handleAccessToken = (response: Response): Promise<string> => {
 	return response.json().then((body) => {
