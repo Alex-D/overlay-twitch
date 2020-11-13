@@ -7,8 +7,8 @@ type StreamLabsEvent = {
 	message: {
 		message: string
 		name?: string
-		from?: string
-		to?: string
+		from_display_name?: string
+		gifter_display_name?: string
 		months?: number
 		amount?: string
 		formatted_amount?: string

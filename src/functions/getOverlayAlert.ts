@@ -1,12 +1,23 @@
 import StreamLabsEvent from 'src/types/streamLabsEvent'
 
+import AlertType from '~src/types/alertTypes'
 import OverlayAlert from '~src/types/overlayAlert'
+
+function getEventType(e: StreamLabsEvent): AlertType {
+	const eventMessage = e.message[0]
+
+	if (e.type === 'subscription' && typeof eventMessage.gifter_display_name !== 'undefined') {
+		return 'gift_sub'
+	}
+
+	return e.type
+}
 
 export default function getOverlayAlert(e: StreamLabsEvent): OverlayAlert {
 	const eventId = e.event_id.toString()
-	const type = e.type
+	const type = getEventType(e)
 	const eventMessage = e.message[0]
-	const name = (eventMessage.name || eventMessage.to) as string
+	const name = (eventMessage.name || eventMessage.from_display_name) as string
 	const message = eventMessage.message
 
 	let title = type as string
@@ -18,10 +29,10 @@ export default function getOverlayAlert(e: StreamLabsEvent): OverlayAlert {
 			title = `Donation — ${eventMessage.formatted_amount}`
 			break
 		case 'gift_sub':
-			title = `Cadeau — ${eventMessage.from} offre un sub`
+			title = `Cadeau — ${eventMessage.gifter_display_name} offre un sub`
 			break
 		case 'cgift_sub':
-			title = `Cadeaux — ${eventMessage.from} offre des subs`
+			title = `Cadeaux — ${eventMessage.gifter_display_name} offre des subs`
 			break
 		case 'host':
 			title = `Host — ${eventMessage.viewers} viewers`
