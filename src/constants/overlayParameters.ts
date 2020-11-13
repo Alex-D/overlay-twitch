@@ -2,12 +2,14 @@ import getUrlSearchParam from 'src/functions/getUrlSearchParam'
 
 const getParameter = (key: string) => {
 	const sessionStorageValue = sessionStorage.getItem(key)
-	if (sessionStorageValue !== null) {
+	if (sessionStorageValue !== null && sessionStorageValue !== '') {
 		return sessionStorageValue
 	}
 
 	const value = getUrlSearchParam(key)
-	sessionStorage.setItem(key, value)
+	if (value !== '') {
+		sessionStorage.setItem(key, value)
+	}
 
 	return value
 }
