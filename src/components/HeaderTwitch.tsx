@@ -16,6 +16,11 @@ export default function HeaderTwitch(): VNode {
 
 		fetchTwitchHelix('/streams?user_login=alexandredemode', token)
 			.then((body) => {
+				if (body.data.length === 0) {
+					setViewers(0)
+					return
+				}
+
 				setViewers(body.data[0].viewer_count)
 			})
 
