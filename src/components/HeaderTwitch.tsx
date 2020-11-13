@@ -14,7 +14,7 @@ export default function HeaderTwitch(): VNode {
 	useInterval(async () => {
 		const token = await fetchTwitchToken()
 
-		fetchTwitchHelix('/streams?user_login=alexandredemode', token)
+		fetchTwitchHelix(`/streams?user_id=${TWITCH_CHANNEL_ID}`, token)
 			.then((body) => {
 				if (body.data.length === 0) {
 					setViewers(0)
