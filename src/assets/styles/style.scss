@@ -8,11 +8,14 @@
 
 @import "fonts";
 
-html,
-body {
+html {
 	background: #555;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	margin: 0;
 	overflow: hidden;
 }
 

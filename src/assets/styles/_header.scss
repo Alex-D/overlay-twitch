@@ -3,17 +3,30 @@
 	--header-border-color: hsl(85, 10%, 10%);
 	--header-background-color: linear-gradient(to bottom right, #a8d26d -10%, #00c9a7 110%);
 	--header-height: 48px;
+	--header-margin: 8px;
 
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	height: var(--header-height);
 	padding: 0 16px;
-	margin: 8px;
+	margin: var(--header-margin);
 	background: var(--header-background-color);
 	color: var(--header-color);
 	border-radius: 4px;
 	box-shadow: var(--header-color) 0 0 4px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: calc(-1 * var(--header-margin));
+		left: calc(-1 * var(--header-margin));
+		right: calc(-1 * var(--header-margin));
+		height: calc(1.5 * var(--header-height));
+		background: linear-gradient(to bottom, hsla(134, 10%, 9%, 0.8) 20%, hsla(134, 10%, 9%, 0));
+		z-index: -1;
+	}
 }
 
 .header--socials {
